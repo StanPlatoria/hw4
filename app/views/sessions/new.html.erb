@@ -1,6 +1,25 @@
-<h1>Login</h1>
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-4">
+    <h1 class="mb-4">Login</h1>
 
-<form action="/sessions" method="post">
+    <form action="/login" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-  <button>Login<button>
-</form>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" name="email" id="email" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" id="password" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+
+    <p class="mt-3 text-center">
+      Don't have an account? <a href="/users/new">Signup</a>
+    </p>
+  </div>
+</div>
